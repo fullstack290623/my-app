@@ -8,10 +8,10 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Hello world!</h1>
-        <Car />
-        <Car />
-        <Car />
-
+        <Car brand="Honda" model="civic" 
+             color="black"/>
+             <Car brand="Ferrari" model="testa rossa" 
+             color="red"/>             
       </div>
     );
   }
