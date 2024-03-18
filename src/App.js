@@ -30,7 +30,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>My Garage</h1>
-        <AddCar />
+        <AddCar add_car={this.addCar} />
         <Garage cars={this.state.cars} delete_car={this.deleteCar} />
       </div>
     );
