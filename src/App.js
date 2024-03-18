@@ -20,7 +20,7 @@ class App extends Component {
   }
   addCar = (_car) => {
     // apply the id to car (use my_car_seq)
-    const new_cars = [...this.state.cars, { ..._car, id: App.my_car_seq++ }]
+    const new_cars = [{ ..._car, id: App.my_car_seq++ }, ...this.state.cars ]
     this.setState({
       cars: new_cars
     })
