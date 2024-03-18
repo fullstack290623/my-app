@@ -3,11 +3,13 @@ import React, { Component } from 'react';
 class Car extends Component {
     render () {
         console.log(this.props);
+        //const color = this.props.color
+        const { color, brand, model } = this.props
         return (
-            <div style = {{ color: this.props.color}}>
-                <p>Brand: { this.props.brand }</p>
-                <p>Model: { this.props.model }</p>
-                <p>Color: { this.props.color }</p>
+            <div style = {{ color }}>
+                <p>Brand: { brand }</p>
+                <p>Model: { model }</p>
+                <p>Color: { color }</p>
             </div>
         )
     }

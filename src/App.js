@@ -1,4 +1,4 @@
-import React,{ Component } from 'react'
+import React, { Component } from 'react'
 import Car from './components/Car'
 class App extends Component {
   render() {
@@ -8,10 +8,8 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Hello world!</h1>
-        <Car brand="Honda" model="civic" 
-             color="black"/>
-             <Car brand="Ferrari" model="testa rossa" 
-             color="red"/>             
+        <Car brand="Honda" model="civic" color="green" />
+        <Car brand="Ferrari" model="testa rossa" color="red" />
       </div>
     );
   }
