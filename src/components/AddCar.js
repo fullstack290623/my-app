@@ -25,7 +25,6 @@ class AddCar extends Component {
         e.preventDefault();
         console.log(this.state.car_from_input);        
         this.props.add_car(this.state.car_from_input)
-        console.log('mmmmmmmmmmm');
     }
     render() {
         console.log(this.props);

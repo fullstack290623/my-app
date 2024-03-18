@@ -12,16 +12,18 @@ class App extends Component {
       { brand: "Chevrolet", model: "Cicalvaliervic", color: "blue", year: 2024, id: 3 }
     ]
   }
-  deleteCar = _id => {
+  deleteCar = (_id) => {
     const new_cars = this.state.cars.filter(car => car.id != _id)
     this.setState({
       cars: new_cars
     })
   }
-  addCar = _car => {
+  addCar = (_car) => {
       // apply the id to car (use my_car_seq)
-      // add the car to the array 
-      // set state
+      const new_cars = [ ...this.state.cars, { ..._car, id: App.my_car_seq++ } ]
+      this.setState({
+        cars: new_cars
+      })
   }
   render() {
     // create component called HelloWolrd
