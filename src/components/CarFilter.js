@@ -8,8 +8,11 @@ class CarFilter extends Component {
     }
     handleChange = (e) => {
         // take the e.target.value and setState
-
+        this.setState({
+            year_filter: e.target.value
+        })
         // call function in App.js and set the filter year
+        this.props.set_filter(e.target.value)
     }
     render() {
         return (

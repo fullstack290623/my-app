@@ -29,6 +29,21 @@ class App extends Component {
   }
   setFilter = (year) => {
     // set_state_filter_by_year
+    this.setState({
+      filter_by_year: year
+    })
+  }
+  startUpdate = (_id) => {
+    const new_cars = this.state.cars.map(car => car.id == _id ? { ...car, update: true} : car)
+    this.setState({
+      cars: new_cars
+    })
+  }
+  finishUpdate = (_id) => {
+    const new_cars = this.state.cars.map(car => car.id == _id ? { ...car, update: false} : car)
+    this.setState({
+      cars: new_cars
+    })
   }
   render() {
     // create component called HelloWolrd
@@ -39,9 +54,10 @@ class App extends Component {
         <header className="App-header">
           <h1 style= {{color: 'black'}}>My Garage</h1>
           <AddCar add_car={this.addCar} />
-          <CarFilter />
+          <CarFilter set_filter={this.setFilter} />
           <hr />
-          <Garage cars={this.state.cars} delete_car={this.deleteCar} />
+          <Garage cars={this.state.cars} delete_car={this.deleteCar} filter_by_year={this.state.filter_by_year} 
+                  start_update={this.startUpdate} finish_update={this.finishUpdate} />
         </header>
       </div>
     );
