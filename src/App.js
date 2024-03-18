@@ -9,7 +9,7 @@ class App extends Component {
     cars: [
       { brand: "Honda", model: "Civic", color: "green", year: 2020, hybrid: true, id: 1 },
       { brand: "Ferrari", model: "Testa Rossa", color: "red", year: 2023, id: 2 },
-      { brand: "Chevrolet", model: "Cicalvaliervic", color: "blue", year: 2024, id: 3 }
+      { brand: "Chevrolet", model: "Cicalvaliervic", color: "orange", year: 2024, id: 3 }
     ]
   }
   deleteCar = (_id) => {
@@ -19,11 +19,11 @@ class App extends Component {
     })
   }
   addCar = (_car) => {
-      // apply the id to car (use my_car_seq)
-      const new_cars = [ ...this.state.cars, { ..._car, id: App.my_car_seq++ } ]
-      this.setState({
-        cars: new_cars
-      })
+    // apply the id to car (use my_car_seq)
+    const new_cars = [...this.state.cars, { ..._car, id: App.my_car_seq++ }]
+    this.setState({
+      cars: new_cars
+    })
   }
   render() {
     // create component called HelloWolrd
@@ -31,9 +31,11 @@ class App extends Component {
     // line #10 <HelloWorld />
     return (
       <div className="App">
-        <h1>My Garage</h1>
-        <AddCar add_car={this.addCar} />
-        <Garage cars={this.state.cars} delete_car={this.deleteCar} />
+        <header className="App-header">
+          <h1>My Garage</h1>
+          <AddCar add_car={this.addCar} />
+          <Garage cars={this.state.cars} delete_car={this.deleteCar} />
+        </header>
       </div>
     );
   }
