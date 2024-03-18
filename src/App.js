@@ -11,7 +11,8 @@ class App extends Component {
       { brand: "Honda", model: "Civic", color: "green", year: 2020, hybrid: true, id: 1 },
       { brand: "Ferrari", model: "Testa Rossa", color: "red", year: 2023, id: 2 },
       { brand: "Chevrolet", model: "Cicalvaliervic", color: "orange", year: 2024, id: 3 }
-    ]
+    ],
+    filter_by_year: 0
   }
   deleteCar = (_id) => {
     const new_cars = this.state.cars.filter(car => car.id != _id)
@@ -25,6 +26,9 @@ class App extends Component {
     this.setState({
       cars: new_cars
     })
+  }
+  setFilter = (year) => {
+    // set_state_filter_by_year
   }
   render() {
     // create component called HelloWolrd
