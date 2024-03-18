@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Garage from './components/Garage'
 import AddCar from './components/AddCar'
+import CarFilter from './components/CarFilter'
 import "./App.css"
 
 class App extends Component {
@@ -32,8 +33,10 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1>My Garage</h1>
+          <h1 style= {{color: 'black'}}>My Garage</h1>
           <AddCar add_car={this.addCar} />
+          <CarFilter />
+          <hr />
           <Garage cars={this.state.cars} delete_car={this.deleteCar} />
         </header>
       </div>
